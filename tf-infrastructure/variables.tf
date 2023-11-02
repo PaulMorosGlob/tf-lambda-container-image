@@ -9,7 +9,6 @@ variable "environment" {
 }
 
 variable "app_name" {
-  type    = string
-  # prefixes with a random string to avoid collisions
+  type    = string  
   default = "myapp"
 }
