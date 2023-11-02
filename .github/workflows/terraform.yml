@@ -15,7 +15,8 @@ jobs:
     environment: sandbox
 
     env:
-      INFRASTRUCTURE_FOLDER: "tf-infrastructure"    
+      INFRASTRUCTURE_FOLDER: "tf-infrastructure"
+      ENV: "sandbox"    
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
@@ -40,7 +41,7 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -backend-config=backend/{$ENV}.hcl -reconfigure
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
