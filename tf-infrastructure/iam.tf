@@ -11,8 +11,7 @@ resource "aws_ecr_repository_policy" "ecr_repository" {
   policy = jsonencode({
     Version = "2012-10-17",
     Statement = [
-      {
-        Sid       = "new policy",
+      {        
         Effect    = "Allow",
         Principal = "*",
         Action = [
