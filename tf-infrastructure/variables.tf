@@ -9,6 +9,6 @@ variable "environment" {
 }
 
 variable "app_name" {
-  type    = string  
+  type    = string
   default = "myapp"
 }
