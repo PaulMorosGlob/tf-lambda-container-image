@@ -1,4 +1,4 @@
-variable "app_name"{
-    type = string
-    default = "myapp"
+variable "app_name" {
+  type    = string
+  default = "myapp"
 }
