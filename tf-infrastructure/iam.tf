@@ -12,8 +12,7 @@ resource "aws_ecr_repository_policy" "ecr_repository" {
     Version = "2012-10-17",
     Statement = [
       {
-        Effect    = "Allow",
-        Principal = "*",
+        Effect    = "Allow",        
         Action = [
           "ecr:GetDownloadUrlForLayer",
           "ecr:BatchGetImage",
