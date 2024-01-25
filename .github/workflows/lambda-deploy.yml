@@ -29,12 +29,12 @@ jobs:
           ECR_REPOSITORY: 	my_develop_app_develop_ecr_repo
           IMAGE_TAG: latest
         run: |            
-          cd glob-sam-app/hello-world
+          cd glob-sam-app/hello_world
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
 
-      - name: Deploy to Amazon App Runner
+      - name: Deploy to ECR
         id: deploy-image
         env:
             ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
